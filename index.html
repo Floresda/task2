@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables & Conditionals</title>
+</head>
+<body>
+    
+    <script>
+        let grade = prompt("Enter a grade between 0 and 100:");
+
+grade = parseInt(grade);
+
+
+if (!isNaN(grade) && grade >= 0 && grade <= 100) {
+
+  let ifResult = "";
+  if (grade >= 91 && grade <= 100) {
+    ifResult = "A";
+  } else if (grade >= 81 && grade <= 90) {
+    ifResult = "B";
+  } else if (grade >= 71 && grade <= 80) {
+    ifResult = "C";
+  } else if (grade >= 61 && grade <= 70) {
+    ifResult = "D";
+  } else {
+    ifResult = "F";
+  }
+
+  let switchResult = "";
+  switch (true) {
+    case grade >= 91 && grade <= 100:
+      switchResult = "A";
+      break;
+    case grade >= 81 && grade <= 90:
+      switchResult = "B";
+      break;
+    case grade >= 71 && grade <= 80:
+      switchResult = "C";
+      break;
+    case grade >= 61 && grade <= 70:
+      switchResult = "D";
+      break;
+    default:
+      switchResult = "F";
+  }
+
+  document.body.innerHTML += `<p>(a) Grade: ${ifResult}</p>`;
+  document.body.innerHTML += `<p>(b) Grade: ${switchResult}</p>`;
+
+} else {
+  // Display an error message for invalid input
+  document.body.innerHTML += "<p>Invalid input. Please enter a valid grade.</p>";
+}
+    </script>
+</body>
+</html>
